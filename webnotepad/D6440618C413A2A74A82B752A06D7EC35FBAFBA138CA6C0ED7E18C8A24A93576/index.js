@@ -7,7 +7,7 @@ uap.setUA(window.navigator.userAgent);
 document.getElementById('devices').innerText = uap.getResult().os.name;
 // 处理存储数据
 for (let i = 0; i < allfile.length; i++) {
-    var data = ReadJson('Data/' + allfile[i] + '.json', null, null, true, null);
+    var data = ReadJson('https://api.ycl.cool/tool/webnotepad/Data/' + allfile[i] + '.json', null, null, true, null);
     var devices = document.createElement('a');
     var textdiv = document.createElement('div');
     var UAtext = document.createElement('input');
