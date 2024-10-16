@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://ycl.cool/media/icon.ico" rel="shortcut icon">
+    <title>ChatGPT源</title>
+    <style>
+      html {
+       height:100%;
+       overflow: hidden;
+      }
+
+      body {
+        height:100%;
+      }
+
+      /* 左侧导航栏样式 */
+      .sidebar {
+        float: left;
+        width: 250px;
+        height: 100%;
+        background-color: #f2f2f2;
+        text-align:center;
+      }
+      
+      .sidebar button {
+        display: block;
+        margin: 10px;
+        padding: 5px;
+        width: 90%;
+        font-size: 16px;
+        text-align: center;
+        border-radius:50px;
+      }
+      
+      /* 右侧iframe样式 */
+      .content {
+        float: left;
+        width: calc(100% - 250px);
+        height: 100%;
+      }
+      
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 左侧导航栏 -->
+    <div class="sidebar">
+      <h3>ChatGPT源</h3>
+      <a>点击下面的按钮访问国内的ChatGPT源</a>
+      <button onclick="showPage('https://zaimaai.cn/')">zaimaai.cn</button>
+      <button onclick="showPage('https://chat.aidutu.cn')">chat.aidutu.cn</button>
+      <button onclick="showPage('https://chatbd.free2gpt.xyz/')">chatbd.free2gpt.xyz</button>
+      <button onclick="showPage('https://uuu.mygpt.bid/')">uuu.mygpt.bid</button>
+      <button onclick="showPage('https://cgs.skybyte.me/')">cgs.skybyte.me</button>
+      <button onclick="showPage('https://free.aitom.cc/')">free.aitom.cc</button>
+      <button onclick="showPage('https://chat.pinkfong.cn/')">chat.pinkfong.cn</button>
+      <button onclick="showPage('http://bamboochat.kebakeba.com/')">bamboochat.kebakeba.com</button>
+      <button onclick="showPage('https://ai.minihuo.com/')">ai.minihuo.com</button>
+      <button onclick="showPage('https://chatgai.lovepor.cn/')">chatgai.lovepor.cn</button>
+      <button onclick="showPage('https://www.cleandx.xyz/')">www.cleandx.xyz</button>
+    </div>
+    
+    <!-- 右侧iframe -->
+    <div class="content">
+      <iframe id="page" src=""></iframe>
+    </div>
+    
+    <!-- 切换网页函数 -->
+    <script>
+      function showPage(url) {
+        document.getElementById("page").src = url;
+      }
+    </script>
+  </body>
+</html>

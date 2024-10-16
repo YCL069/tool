@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <link href="https://ycl.cool/media/icon.ico" rel="shortcut icon">
+    <script src="browser.js"></script>
+    <script src="ua-parser.js"></script>
+    <script>
+        function show(name, value) {
+            document.write('<td>' + name + '</td>')
+            document.write('<td>' + value + '</td>')
+        }
+        var uap = new UAParser();
+        uap.setUA(window.navigator.userAgent);
+        var result = uap.getResult();
+        console.log(result);
+        console.log(browser());
+    </script>
+</head>
+
+<body>
+    <br>
+    <div class="code" id="UAd"></div>
+
+    <table border="2">
+        <tr>
+            <td colspan="2" id="UA"></td>
+            <script>document.getElementById("UA").innerHTML = window.navigator.userAgent;</script>
+        </tr>
+        <tr>
+            <script>show("浏览器名称", result.browser.name)</script>
+        </tr>
+        <tr>
+            <script>show("浏览器版本", result.browser.version)</script>
+        </tr>
+        <tr>
+            <script>show("渲染引擎", result.engine.name)</script>
+        </tr>
+        <tr>
+            <script>show("引擎版本", result.engine.version)</script>
+        </tr>
+        <tr>
+            <script>show("系统名字", result.os.name)</script>
+        </tr>
+        <tr>
+            <script>
+                // Win9x 会错误的返回空值
+                if (!browser().systemVersion == ""){
+                show("系统版本", browser().systemVersion)
+            }
+            </script>
+        </tr>
+        <tr>
+            <script>
+                // 仅限PC
+                if (!result.cpu.architecture == "undefined") {
+                    show("系统架构", result.cpu.architecture)
+                }
+            </script>
+        </tr>
+        <tr>
+            <script>show("系统语言", browser().language)</script>
+        </tr>
+        <tr>
+            <script>show("设备类型", browser().device)</script>
+        </tr>
+        <tr>
+            <script>show("设备平台", browser().platform)</script>
+
+        </tr>
+        <tr>
+            <script>
+                if (browser().isWebview) {
+                    show("Android Webview", browser().isWebview)
+                }
+            </script>
+        </tr>
+    </table>
+</body>
+
+</html>
