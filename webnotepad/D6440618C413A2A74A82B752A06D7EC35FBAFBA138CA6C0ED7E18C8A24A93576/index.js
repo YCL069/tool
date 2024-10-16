@@ -7,7 +7,7 @@ uap.setUA(window.navigator.userAgent);
 document.getElementById('devices').innerText = uap.getResult().os.name;
 // 处理存储数据
 for (let i = 0; i < allfile.length; i++) {
-    var data = ReadJson('https://api.ycl.cool/tool/webnotepad/Data/' + allfile[i] + '.json', null, null, true, null);
+    var data = ReadJson('https://api.ycl.cool/tool/webnotepad/D6440618C413A2A74A82B752A06D7EC35FBAFBA138CA6C0ED7E18C8A24A93576/Data/' + allfile[i] + '.json', null, null, true, null);
     var devices = document.createElement('a');
     var textdiv = document.createElement('div');
     var UAtext = document.createElement('input');
