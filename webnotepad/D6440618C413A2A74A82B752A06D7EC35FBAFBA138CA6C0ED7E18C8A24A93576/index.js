@@ -56,7 +56,7 @@ for (let i = 0; i < allfile.length; i++) {
         var img = document.createElement('img');
         img.style.width = "95%";
         img.style.marginLeft = 0;
-        img.src = "https://tool.ycl.cool/webnotepad/D6440618C413A2A74A82B752A06D7EC35FBAFBA138CA6C0ED7E18C8A24A93576/Data/" + allfile[i] + "." + data['fileExtension']
+        img.src = "https://api.ycl.cool/tool/webnotepad/D6440618C413A2A74A82B752A06D7EC35FBAFBA138CA6C0ED7E18C8A24A93576/Data/" + allfile[i] + "." + data['fileExtension']
         textdiv.appendChild(img);
     }
     textdiv.appendChild(delbtn);
