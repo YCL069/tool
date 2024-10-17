@@ -86,7 +86,7 @@ function getDate(timestamp) {
 
 function Control(isAdd, DeleteID, DelCallback) {
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://control.php', true);
+    xhr.open('POST', 'https://api.ycl.cool/tool/webnotepad/control.php', true);
     if (isAdd) {
         document.getElementById('return').style.display = null;
         document.getElementById('return').innerText = "Uploading...";
