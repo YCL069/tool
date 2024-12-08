@@ -166,7 +166,7 @@ async function GetItem() {
         try {
             const response = await fetch(server_URL, {
                 method: 'GET',
-                headers: { 'token': token, 'id': 0 }
+                headers: { 'token': token, 'id': 'all' }
             });
             if (!response.ok) {
                 ErrorShow('Info1', '查看控制台以获取详细信息...', 10, `${response.status} ${response.statusText}`);
@@ -295,7 +295,7 @@ async function DelItem(id) {
             headers: { 'token': token },
             body: id_data[id]
         });
-        document.getElementById(`Item-info${id}`).innerText = `${response.status} ${response.statusText}`;
+        document.getElementById(`Item-info${id}`).innerText = `${response.status} ${response.statusText ? response.statusText : 'OK'}`;
         setTimeout(() => document.getElementById(`Item${id}`).style.display = "none", 1500)
     } catch (error) {
         ErrorShow(`Item-info${id}`, error.stack + '\n查看控制台以获取更多信息...', 11);
