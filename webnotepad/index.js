@@ -152,7 +152,7 @@ async function GetItem() {
     try {
         // 自动获取
         const auto = document.getElementById('RSA1-auto').checked;
-        localStorage.setItem('auto', auto);
+        if (auto) localStorage.setItem('auto', auto);
 
         // token
         const token = GetToken();
@@ -189,13 +189,13 @@ async function GetItem() {
             crypt.setPrivateKey(RSA_down);
             const id_enc = crypt.decrypt(item);
             if (!id_enc) {
-                ErrorShow('Info1', `HTTP状态码: ${response.status} ${response.statusText}\n当前下行密钥为:\n${RSA_down}`, 9);
+                ErrorShow('Info1', `当前下行密钥为:\n${RSA_down}`, 9);
                 return
             }
             crypt.setPublicKey(RSA_up);
             const data_enc = crypt.encrypt(id_enc);
             if (!data_enc) {
-                ErrorShow('Info1', `HTTP状态码: ${response.status} ${response.statusText}\n当前下行密钥为:\n${RSA_up}`, 10);
+                ErrorShow('Info1', `当前下行密钥为:\n${RSA_up}`, 10);
                 return
             }
             return data_enc
@@ -277,7 +277,8 @@ async function GetItem() {
 
         document.getElementsByClassName('container download')[0].style.display = "none"
     } catch (error) {
-        ErrorShow('Info1', error.message, -1);
+        ErrorShow('Info1', error.stack, -1);
+        console.log(error)
     }
 }
 
