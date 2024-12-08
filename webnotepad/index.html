@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web Notepad</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://api.ycl.cool/js/function.js"></script>
+    <script src="./jsencrypt.min.js"></script>
+</head>
+
+<body>
+    <div class="container title">Web Notepad</div>
+    <div class="container error" style="display: none;">
+        <a>错误详情</a>
+        <svg id="arrow-down" style="display: none" onclick="ErrorDiv(false)" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M14.8284 12.0259L16.2426 13.4402L12 17.6828L7.75733 13.4402L9.17155 12.0259L11 13.8544V6.31724H13V13.8544L14.8284 12.0259Z"
+                fill="currentColor" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M1 5C1 2.79086 2.79086 1 5 1H19C21.2091 1 23 2.79086 23 5V19C23 21.2091 21.2091 23 19 23H5C2.79086 23 1 21.2091 1 19V5ZM5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3Z"
+                fill="currentColor" />
+        </svg>
+        <svg id="arrow-up" onclick="ErrorDiv(true)" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M14.8543 11.9741L16.2686 10.5599L12.0259 6.31724L7.78327 10.5599L9.19749 11.9741L11.0259 10.1457V17.6828H13.0259V10.1457L14.8543 11.9741Z"
+                fill="currentColor" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M1 19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5C2.79086 1 1 2.79086 1 5V19ZM5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21Z"
+                fill="currentColor" />
+        </svg>
+        <div id="error-info" class="text" style="padding-bottom: 15px;display: none;">
+            <textarea id="error-text" placeholder="错误详情..." style="background-color: #fff;resize: none"></textarea>
+        </div>
+    </div>
+    <div class="container upload">
+        <div style="margin-left: 10px">
+            <a>上行公钥:</a>
+            <input type="checkbox" id="RSA0-save" />
+            <label for="RSA0-save">记住密钥</label>
+            <input type="file" id="RSA0-file" onchange="RSAChoose(event,true)">
+            <a id="RSA0-info"></a><br>
+            <a>图像(可选):</a>
+            <input type="file" id="Input-img" accept="image/*">
+        </div>
+        <div class="text">
+            <textarea id="Input-text" placeholder="输入文字..." style="background-color: #ffffffaa"></textarea>
+        </div>
+        <div class="container button">
+            <button onclick="AddItem()">添加笔记</button>
+            <a id="Info0"></a>
+        </div>
+    </div>
+    <div class="container download">
+        <a>下行私钥:</a>
+        <input type="checkbox" id="RSA1-save" />
+        <label for="RSA1-save">记住密钥</label>
+        <input type="file" id="RSA1-file" onchange="RSAChoose(event,false)">
+        <a id="RSA1-info"></a><br>
+        <div class="container button">
+            <input type="checkbox" id="RSA1-auto" />
+            <label for="RSA1-auto">自动获取</label>
+            <button onclick="GetItem()">获取消息</button>
+            <a id="Info1"></a>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

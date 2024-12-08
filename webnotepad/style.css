@@ -1,0 +1,107 @@
+body {
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-width: 300px;
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+    margin-top: 10px;
+    width: 97%;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    max-width: 900px;
+}
+
+.title {
+    font-size: large;
+    font-weight: 500;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    background-color: #7fc5ffaa;
+}
+
+.error {
+    margin-top: 10px;
+    background-color: #ff7f7faa;
+}
+
+.error a {
+    font-size: large;
+    font-weight: 400;
+    margin-left: 10px;
+    line-height: 35px;
+}
+
+.error svg {
+    float: right;
+    margin-top: 5.5px;
+    margin-right: 10px;
+}
+
+.upload {
+    margin-top: 10px;
+    background-color: #7fffdfaa;
+}
+
+.download {
+    margin-top: 10px;
+    background-color: #4f8794aa;
+}
+
+.download a {
+    margin-left: 10px;
+}
+
+.item {
+    margin-top: 10px;
+    text-align: center;
+    background-color: #4b595caa;
+}
+
+.item b {
+    display: block;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.item hr {
+    width: 98%;
+}
+
+.item input {
+    font-weight: 700;
+    font-size: medium;
+    border: 0;
+    padding: 0;
+    width: 95%;
+}
+
+.text {
+    height: 100px;
+    text-align: center;
+}
+
+.text textarea {
+    height: 100px;
+    width: 96%;
+    background-color: #70898daa;
+}
+
+.button {
+    height: 35px;
+    line-height: 40px;
+    margin-top: 0;
+    text-align: center;
+}
