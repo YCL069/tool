@@ -1,7 +1,7 @@
 let id_data = [];
 let key_OK = 0;
 let RSA_up, RSA_down;
-const server_URL = 'http://100.69.211.220:18080';
+const server_URL = 'https://api.ycl.cool/tool/webnotepad/';
 const errtext = document.getElementById('error-text');
 const crypt = new JSEncrypt();
 
