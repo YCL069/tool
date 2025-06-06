@@ -5,10 +5,11 @@
     <title>Web Notepad</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="icon" href="https://res.ycl.cool/img/icon.ico">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://api.ycl.cool/js/function.js"></script>
+    <script src="http://localhost:8080/outside/function.js"></script>
+    <!-- <script src="https://api.ycl.cool/js/function.js"></script> -->
     <script src="./jsencrypt.min.js"></script>
 </head>
 
@@ -43,7 +44,7 @@
             <a>上行公钥:</a>
             <input type="checkbox" id="RSA0-save" />
             <label for="RSA0-save">记住密钥</label>
-            <input type="file" id="RSA0-file" onchange="RSAChoose(event,true)">
+            <input type="file" id="RSA0-file" onchange="RSAChoose(event,true)" style="width: 70px">
             <a id="RSA0-info"></a><br>
             <a>图像(可选):</a>
             <input type="file" id="Input-img" accept="image/*">
@@ -52,7 +53,7 @@
             <textarea id="Input-text" placeholder="输入文字..." style="background-color: #ffffffaa"></textarea>
         </div>
         <div class="container button">
-            <button onclick="AddItem()">添加笔记</button>
+            <button onclick="AddItem()">添加笔记</button><br>
             <a id="Info0"></a>
         </div>
     </div>
@@ -60,12 +61,12 @@
         <a>下行私钥:</a>
         <input type="checkbox" id="RSA1-save" />
         <label for="RSA1-save">记住密钥</label>
-        <input type="file" id="RSA1-file" onchange="RSAChoose(event,false)">
+        <input type="file" id="RSA1-file" onchange="RSAChoose(event,false)" style="width: 70px">
         <a id="RSA1-info"></a><br>
         <div class="container button">
             <input type="checkbox" id="RSA1-auto" />
             <label for="RSA1-auto">自动获取</label>
-            <button onclick="GetItem()">获取消息</button>
+            <button onclick="GetItem()">获取消息</button><br>
             <a id="Info1"></a>
         </div>
     </div>

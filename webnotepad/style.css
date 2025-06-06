@@ -89,7 +89,7 @@ img {
 }
 
 .text {
-    height: 100px;
+    /* height: 100px; */
     text-align: center;
 }
 
@@ -100,8 +100,14 @@ img {
 }
 
 .button {
-    height: 35px;
-    line-height: 40px;
-    margin-top: 0;
+    /* height: 35px; */
+    /* line-height: 40px; */
+    /* margin-top: 0; */
     text-align: center;
+}
+
+@media (max-width: 620px) {
+    .container {
+        width: 100%;
+    }
 }
