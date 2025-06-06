@@ -1,7 +1,7 @@
 let id_data = [];
 let RSA_up, RSA_down;
-// const server_URL = 'http://192.168.216.128:8080/';
-const server_URL = 'https://api.ycl.cool/tool/webnotepad/';
+const server_URL = 'http://192.168.216.128:8080/';
+// const server_URL = 'https://api.ycl.cool/tool/webnotepad/';
 const errtext = document.getElementById('error-text');
 const crypt = new JSEncrypt();
 
@@ -259,7 +259,8 @@ async function DelItem(id) {
             headers: { 'token': token },
             body: id_data[id]
         });
-        document.getElementById(`Item-info${id}`).innerText = `${response.status} ${response.statusText ? response.statusText : 'OK'}`;
+        const text = await response.text();
+        document.getElementById(`Item-info${id}`).innerText = text;
         setTimeout(() => document.getElementById(`Item${id}`).style.display = "none", 1500)
     } catch (error) {
         ErrorShow(`Item-info${id}`, error.stack + '\n查看控制台以获取更多信息...', 11);
