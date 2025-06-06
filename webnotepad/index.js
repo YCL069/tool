@@ -1,7 +1,6 @@
 let id_data = [];
 let RSA_up, RSA_down;
-const server_URL = 'http://192.168.216.128:8080/';
-// const server_URL = 'https://api.ycl.cool/tool/webnotepad/';
+const server_URL = isDebug() ? 'http://192.168.216.128:8080/' : 'https://api.ycl.cool/tool/webnotepad/';
 const errtext = document.getElementById('error-text');
 const crypt = new JSEncrypt();
 
