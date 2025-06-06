@@ -1,7 +1,7 @@
 let id_data = [];
 let RSA_up, RSA_down;
-// const server_URL = 'http://192.168.216.128:8080/';
-const server_URL = 'https://api.ycl.cool/tool/webnotepad/';
+const server_URL = 'http://192.168.216.128:8080/';
+// const server_URL = 'https://api.ycl.cool/tool/webnotepad/';
 const errtext = document.getElementById('error-text');
 const crypt = new JSEncrypt();
 
@@ -165,21 +165,23 @@ async function GetItem() {
         }
 
         // 迭代处理响应数据
+        let iserror = false;
         Object.keys(json).forEach(async (subName, i) => {
             const item = json[subName];
-            console.log(subName)
 
             // 回加密id数据
             crypt.setPrivateKey(RSA_down);
             const id_enc = crypt.decrypt(subName);
             if (!id_enc) {
                 ErrorShow('Info1', `当前下行密钥为:\n${RSA_down}`, 9);
+                iserror = true;
                 return
             }
             crypt.setPublicKey(RSA_up);
             const data_enc = crypt.encrypt(id_enc.replace(/^["]|["]$/g, ''));
             if (!data_enc) {
                 ErrorShow('Info1', `当前下行密钥为:\n${RSA_up}`, 10);
+                iserror = true;
                 return
             }
             id_data[i] = data_enc;
@@ -237,7 +239,7 @@ async function GetItem() {
                 </div>`;
             document.body.appendChild(div);
         });
-        document.getElementsByClassName('container download')[0].style.display = "none"
+        if (!iserror) document.getElementsByClassName('container download')[0].style.display = "none"
     } catch (error) {
         ErrorShow('Info1', error.stack, -1);
         console.log(error)
