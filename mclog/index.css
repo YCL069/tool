@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #121212;
+    --panel-bg: #1e1e1e;
+    --border-color: #333;
+    --text-primary: #e0e0e0;
+    --text-secondary: #aaa;
+    --info-color: #4CAF50;
+    --warn-color: #FFC107;
+    --error-color: #F44336;
+    --highlight: #3a3a3a;
+    --accent: #6a5acd;
+}
+
+body {
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: var(--panel-bg);
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.legend {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px 15px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+}
+
+.color-box {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+.info-box {
+    background: var(--info-color);
+}
+
+.warn-box {
+    background: var(--warn-color);
+}
+
+.error-box {
+    background: var(--error-color);
+}
+
+.log-container {
+    padding: 20px;
+    height: 600px;
+    overflow-y: auto;
+    background: var(--bg-dark);
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.log-entry {
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.log-entry:hover {
+    background: var(--highlight);
+}
+
+.log-info {
+    color: var(--info-color);
+}
+
+.log-warn {
+    color: var(--warn-color);
+}
+
+.log-error {
+    color: var(--error-color);
+}
+
+.log-default {
+    color: var(--text-secondary);
+}
+
+.log-date {
+    color: #64b5f6;
+    font-weight: bold;
+}
+
+.log-time {
+    color: #90a4ae;
+}
+
+.stats {
+    display: flex;
+    gap: 25px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .stats {
+        width: 100%;
+        justify-content: space-around;
+    }
+}

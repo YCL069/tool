@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft日志查看器</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="legend">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="infoCount">0</div>
+                    <div class="stat-label">INFO 条目</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="warnCount">0</div>
+                    <div class="stat-label">WARN 条目</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="errorCount">0</div>
+                    <div class="stat-label">ERROR 条目</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="totalCount">0</div>
+                    <div class="stat-label">总条目数</div>
+                </div>
+            </div>
+            <div class="legend-item">
+                <div class="color-box info-box"></div>
+                <span>信息 (INFO)</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box warn-box"></div>
+                <span>警告 (WARN)</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box error-box"></div>
+                <span>错误 (ERROR)</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box" style="background: #aaa;"></div>
+                <span>其他</span>
+            </div>
+            <div class="legend-item">
+                <input type="file" id="fileInput" accept=".log,.txt" style="width: 180px;">
+                <span id="fileStatus" class="stat-label"></span>
+            </div>
+        </div>
+        <div class="log-container" id="logContainer">
+            <div id="log-default" class="log-entry log-default"><span class="log-date">[1/2] </span><span
+                    class="log-warn">等待用户选择日志文件...</span></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
